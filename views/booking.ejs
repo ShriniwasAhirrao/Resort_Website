@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resort Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="accommodations.html">Accommodations</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="booking.html">Booking</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="booking">
+        <h2>Booking</h2>
+        
+        <div class="booking-info">
+            <p>To make a reservation at our resort, please fill out the form below:</p>
+            <form action="confirmation.html" method="post"> <!-- Update action attribute here -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="check-in">Check-in Date:</label>
+                <input type="date" id="check-in" name="check-in" required>
+                
+                <label for="check-out">Check-out Date:</label>
+                <input type="date" id="check-out" name="check-out" required>
+                
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+            
+                <a href="confirmation.html"><button type="submit">Submit</button></a>
+            </form>
+        </div>
+    </section>
+  
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resort Home</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body {
+                color: white;
+                /* Set text color to white */
+            }
+
+            .login-btn {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background-color: black;
+                color: white;
+                border: 2px solid black;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 999;
+            }
+
+            .login-box {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                z-index: 999;
+                text-align: center;
+                display: none;
+                /* Hide by default */
+            }
+
+            .login-box input[type="text"],
+            .login-box input[type="password"],
+            .login-box button {
+                margin: 10px 0;
+                padding: 10px;
+                width: 100%;
+                border: none;
+                border-radius: 5px;
+            }
+
+            .signup-link {
+                display: block;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="accommodations.html">Accommodations</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home">
+            <h1>Welcome to Our Resort</h1>
+            <p>Experience luxury and tranquility at our exquisite resort.
+                <br>
+                Nestled amidst breathtaking natural landscapes, our resort offers the perfect retreat for relaxation and
+                rejuvenation.
+            </p>
+
+            <div class="login-btn" onclick="toggleLogin()">Login</div>
+
+            <div class="login-box" id="loginBox">
+                <h2 style="color: black;">Login</h2> <!-- Set text color to black -->
+                <input id="email" type="text" placeholder="Email">
+                <input id="password" type="password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <a href="#" class="signup-link" onclick="showSignUp()">Don't have an account? Sign Up</a>
+            </div>
+        </section>
+
+        <script>
+            // Function to toggle login box visibility
+            function toggleLogin() {
+                var loginBox = document.getElementById("loginBox");
+                loginBox.style.display = loginBox.style.display === "block" ? "none" : "block";
+            }
+
+            // Function to handle login
+            function login() {
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                if (email && password) {
+                    // Send data to backend for authentication
+                    fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password })
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Invalid email or password');
+                            }
+                            alert('Login successful');
+                            // Redirect or do something else upon successful login
+                        })
+                        .catch(error => {
+                            alert(error.message);
+                        });
+                } else {
+                    alert('Please enter email and password');
+                }
+            }
+
+            // Function to show signup form
+            function showSignUp() {
+                window.location.href = 'signup.html';
+            }
+        </script>
+    </body>
+
+</html>
