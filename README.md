@@ -19,33 +19,33 @@ The Resort Website is built using HTML, CSS, and JavaScript for the front end, w
 
 ## Folder Structure
 
-.
-├── static
-│   ├── photos
-│   ├── accommodations.html
-│   ├── activities.html
-│   ├── booking.html
-│   ├── confirmation.html
-│   ├── dining.html
-│   ├── gallery.html
-│   ├── home.html
-│   ├── index.html
-│   ├── index.sql
-│   ├── location.html
-│   ├── RestaurantMenu.html
-│   ├── SeafoodGrillMenu.html
-│   ├── SignUp.html
-│   ├── SignUp.php
-│   └── styles.css
-├── views
-│   ├── Booking.ejs
-│   ├── ConfirmationSuccess.ejs
-│   ├── error.ejs
-│   └── index.ejs
-├── routes
-│   ├── index.js
-│   └── users.js
-├── app.js
+. 
+├── static 
+│ ├── photos 
+│ ├── accommodations.html 
+│ ├── activities.html 
+│ ├── booking.html 
+│ ├── confirmation.html 
+│ ├── dining.html 
+│ ├── gallery.html 
+│ ├── home.html 
+│ ├── index.html 
+│ ├── index.sql 
+│ ├── location.html 
+│ ├── RestaurantMenu.html 
+│ ├── SeafoodGrillMenu.html 
+│ ├── SignUp.html 
+│ ├── SignUp.php 
+│ └── styles.css 
+├── views 
+│ ├── Booking.ejs 
+│ ├── ConfirmationSuccess.ejs 
+│ ├── error.ejs 
+│ └── index.ejs 
+├── routes 
+│ ├── index.js 
+│ └── users.js 
+├── app.js 
 └── database.js
 
 
